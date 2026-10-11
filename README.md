@@ -56,6 +56,8 @@ KHNP XML APIs → Python collector → 공통 관측 record + 품질 flag → lo
 
 ## Dashboard
 
+[정적 Demo](https://terry0524.github.io/flexpump-ai/) — fixture 기반 시연이며 실제 운영/실시간 데이터가 아닙니다.
+
 `web/`: Next.js/React/TypeScript/Tailwind/shadcn/ui/Recharts. 발전소 선택·위험도 filter·chart·채택/보류/기각 화면 흐름을 구현했습니다.
 
 모든 화면 값은 `web/src/lib/dashboard-data.ts`의 정적 fixture입니다. 고장 가능성·센서값·신뢰도·정비 시점은 시연값이며 KHNP 실측 또는 Ridge 출력이 아닙니다. 버튼은 local UI state만 변경합니다.
@@ -107,3 +109,5 @@ npm run dev
 ```
 
 http://localhost:3000에서 정적 시연 화면을 확인합니다.
+
+GitHub Pages용 정적 export: `STATIC_DEMO_EXPORT=1 npm run build`. 생성된 `web/out/`만 Pages의 `gh-pages` branch로 배포합니다. 인증키·API 호출·server function이 없으며, 별도 GitHub Actions workflow는 추가하지 않습니다.
